@@ -12,3 +12,9 @@
 	right: 10px;
 	position: absolute;
 }
+.text-muted {
+  color:#265a88;
+}
+.input-group-addon {
+  background-color:lightblue;
+}

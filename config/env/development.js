@@ -21,9 +21,9 @@ module.exports = {
 		title: 'Andela Developers Hub'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-		callbackURL: '/auth/facebook/callback'
+		clientID: process.env.FACEBOOK_ID || 784991568216738,
+		clientSecret: process.env.FACEBOOK_SECRET || '4b2d2adab985af6dd9e658ed97f7b7be',
+		callbackURL: 'http://localhost:3000/auth/facebook/callback'
 	},
 	twitter: {
 		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
