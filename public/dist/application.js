@@ -49,9 +49,10 @@ ApplicationConfiguration.registerModule('articles');
 
 // Use Applicaion configuration module to register a new module
 ApplicationConfiguration.registerModule('core');
+
 'use strict';
 
-// Use Applicaion configuration module to register a new module
+// Use Application configuration module to register a new module
 ApplicationConfiguration.registerModule('users');
 'use strict';
 
@@ -60,8 +61,8 @@ angular.module('articles').run(['Menus',
 	function(Menus) {
 		// Set top bar menu items
 		Menus.addMenuItem('topbar', 'Articles', 'articles', 'dropdown', '/articles(/create)?');
-		Menus.addSubMenuItem('topbar', 'articles', 'List Articles', 'articles');
-		Menus.addSubMenuItem('topbar', 'articles', 'New Article', 'articles/create');
+		// Menus.addSubMenuItem('topbar', 'articles', 'List Articles', 'articles');
+		// Menus.addSubMenuItem('topbar', 'articles', 'New Article', 'articles/create');
 	}
 ]);
 'use strict';
@@ -89,6 +90,8 @@ angular.module('articles').config(['$stateProvider',
 		});
 	}
 ]);
+
+
 'use strict';
 
 angular.module('articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Articles',
@@ -202,7 +205,45 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	function($scope, Authentication) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
-	}
+    $scope.alerts = [
+      {
+        icon: ' glyphicon-user',
+        colour: 'btn-success',
+        total: '20,448',
+        description: 'Total Customers'
+      },
+      {
+        icon: ' glyphicon-calendar',
+        colour: 'btn-primary',
+        total: '8,345',
+        description: 'Upcoming Events'
+      },
+      {
+        icon: ' glyphicon-edit',
+        colour: 'btn-danger',
+        total: '500',
+        description: 'New Customers Today'
+      },
+      {
+        icon: ' glyphicon-record',
+        colour: 'btn-info',
+        total: '85,000',
+        description: 'Emails Sent'
+      },
+       {
+        icon: ' glyphicon-eye-open',
+        colour: 'btn-warning',
+        total: '203',
+        description: 'Follow Up Required'
+      },
+      {
+        icon: ' glyphicon-flag',
+        colour: 'btn-danger',
+        total: '348',
+        description: 'Refarrals'
+      }
+    ]	
+  } 
 ]);
 'use strict';
 
@@ -369,6 +410,34 @@ angular.module('core').service('Menus', [
 		//Adding the topbar menu
 		this.addMenu('topbar');
 	}
+]);
+'use strict'
+
+
+'use strict';
+
+//setting up the route for the customers
+
+angular.module('customers').config(['$stateProvider', function ($stateProvider){
+  $stateProvider
+  .state('listCustomers',{
+    url:'/customers',
+    templateUrl: '/modules/customers/views/list.customer.view.html'
+  })
+  .state('createCustomer', {
+    url: '/customers/create',
+    templateUrl: '/modules/customers/views/create.customer.view.html'
+  })
+  .state('viewCustomer', {
+    url:'/customers/:customerId',
+    templateUrl: 'modules.customers/views/view.customer.view.html'
+  })
+  .state('editCustomer', {
+    url: '/customers/:customerId/edit',
+    templateUrl: 'modules/customers/views/edit.customer.view.html'
+  });
+  
+}
 ]);
 'use strict';
 
