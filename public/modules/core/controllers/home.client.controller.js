@@ -22,7 +22,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         icon: ' glyphicon-edit',
         colour: 'btn-danger',
         total: '500',
-        description: 'New Customers Today'
+        description: 'Latest Developer'
       },
       {
         icon: ' glyphicon-record',
@@ -42,6 +42,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         total: '348',
         description: 'Refarrals'
       }
-    ]	
+    ];
   } 
 ]);

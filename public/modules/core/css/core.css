@@ -17,7 +17,24 @@
 body.ng-cloak
 {
 	display: block;
+
 }
 /*div{
   border: 1px solid black;
+}*/
+
+.trans {
+  background-color: transparent;
+  }
+
+/*.home-canvas{
+  background: url(../img/background2.png) no-repeat;
+  background-size: 100%;
+}*/
+body{
+   background: url(../img/background2.png) no-repeat;
+   background-size: 100%;
+}
+/*.cust-info {
+  background-color:black;
 }*/
